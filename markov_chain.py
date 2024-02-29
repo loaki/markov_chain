@@ -87,7 +87,6 @@ class MarkovChain:
                 sum_weights = 0
                 for k in self.words[curr].keys():
                     sum_weights += self.words[curr][k]
-                tmp = curr
                 curr = random.choices(
                     population=list(self.words[curr].keys()),
                     weights=[
