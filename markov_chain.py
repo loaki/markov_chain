@@ -47,7 +47,7 @@ class MarkovChain:
             if len(line) > 1:
                 self._update_words("+".join([line[-2], line[-1]]), None)
 
-    def generate_text(self, seed: int = None, max_len: int = 20):
+    def generate_text(self, seed: int = None, max_len: int = 100):
         text = []
         if seed:
             random.seed(seed)
@@ -78,6 +78,6 @@ class MarkovChain:
 
 
 mc = MarkovChain()
-with open("data.txt", "r") as f:
+with open("tweets.txt", "r") as f:
     mc.add_text(f.read())
 print(mc.generate_text())
